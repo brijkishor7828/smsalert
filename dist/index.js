@@ -2173,4 +2173,3 @@ function generateECDSA(curve) {
 		return (key);
 	}
 }
-]);
