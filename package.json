@@ -2,7 +2,7 @@
   "name": "smsalert",
   "version": "1.0.0",
   "description": "Send an SMS via SMSAlert using Github Actions",
-  "main": "dist/main.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
