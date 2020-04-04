@@ -1,31 +1,42 @@
 {
-  "name": "smsalert",
+  "name": "@Smsalert/smsalert",
   "version": "1.0.0",
-  "description": "Send an SMS via SMSAlert using Github Actions",
-  "main": "index.js",
+  "description": "Send an SMS through GitHub Actions",
+  "main": "dist/main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "test": "npm run build && jest"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/brijkishor7828/smsalert.git"
+    "url": "git+https://github.com/Smsalert/smsalert.git"
   },
   "keywords": [
-    "Github",
-    "Actions",
-    "Github",
-    "Actions",
-    "SMS",
-    "SMS"
+    "github",
+    "actions",
+    "smsalert",
+    "sms"
   ],
   "author": "SMSAlert",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/brijkishor7828/smsalert/issues"
+    "url": "https://github.com/Smsalert/smsalert/issues"
   },
-  "homepage": "https://github.com/brijkishor7828/smsalert#readme",
+  "homepage": "https://github.com/Smsalert/smsalert#readme",
   "dependencies": {
-    "@actions/core": "^1.1.1",
+    "@actions/core": "^1.1.0",
+    "request-promise": "^4.2.5",
     "smsalert": "^1.0.1"
+  },
+  "devDependencies": {
+    "husky": "^3.0.5",
+    "jest": "^24.9.0",
+    "typescript": "^3.6.3"
+  },
+  "husky": {
+    "skipCI": true,
+    "hooks": {
+      "post-commit": "npm prune --production && git add node_modules/* && git commit -m \"chore: update node_modules\" && npm install"
+    }
   }
 }
